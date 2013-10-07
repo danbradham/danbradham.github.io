@@ -1,0 +1,104 @@
+/* Utilizes Steve Hatcher's sticky footer solution.
+http://stever.ca
+http://www.cssstickyfooter.com
+*/
+html{
+    height: 100%;}/* Sticky Footer */
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 100%;
+    background-color: #FFF;
+    color: #222;
+    height: 100%;/* Sticky Footer */
+    display: block;}
+
+a:link,
+a:visited {
+    color: #222;
+    text-decoration: none;}
+
+a:hover,
+a:active {
+    color: #FFF;
+    background: #222;
+    text-decoration: none;}
+
+pre {
+    margin: 2em 1em 2em 4em;}
+
+/*Font Styles*/
+h1{font-weight: 300; letter-spacing: 2px;}
+h2{font-weight: 300; letter-spacing: 2px; font-style: italic;}
+h3{font-weight: 300; letter-spacing: 2px; font-style: italic;}
+h4{font-weight: 300; letter-spacing: 2px; font-style: italic;}
+h5{font-weight: 300; letter-spacing: 2px; font-style: italic;}
+
+p{
+    font: 20px serif;
+    line-height: 30px;}
+
+/* Navigation styles */
+nav {
+    width: 80%;
+    margin: auto;
+    background: #FFF;
+    padding: 0;
+    padding-right:20px;
+    letter-spacing: 4px;}
+
+#home {
+    position: relative;
+    float: left;
+    clear: none;}
+
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: right;}
+
+nav li{
+    display: inline;}
+
+nav a:link,
+nav a:visited{
+    padding: 10px;
+    margin: 0;
+    color: #444;
+    text-decoration: none;}
+
+nav a:hover,
+nav a:active{
+    color: #FFF;
+    background: #222;
+    text-decoration: none;}
+
+#expand{
+    min-height: 100%;}/* Sticky Footer */
+
+#content{
+    overflow: auto;/* Sticky Footer */
+    background: #FFF;
+    min-width: 400px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 160px;}/* Sticky Footer */
+
+#footer{
+    position: relative;/* Sticky Footer */
+    height: 120px;/* Sticky Footer */
+    clear:both;/* Sticky Footer */
+    background: #222;
+    color: #EEE;
+    margin: 0;
+    margin-top: -160px;/* Sticky Footer */
+    padding: 20px;}
+
+#footer_content{
+    width: 80%;
+    margin: 0 auto;}
