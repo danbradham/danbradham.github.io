@@ -12,13 +12,13 @@
     height: 1px;
     background: #FFF;
 }
-.RowMedium{
+.RowMedium {
     display: table-row;
     height: 1px;
     background: #FFF;
 }
 
-.RowDark{
+.RowDark {
     display: table-row;
     height: 1px;
     background: #222;
@@ -264,5 +264,9 @@ ul.tag_cloud li.tag-3 {
     max-width: 720px;
     width: 80%;
     margin: 0 auto;
+    padding: 20px;
+}
+
+.padded {
     padding: 20px;
 }
