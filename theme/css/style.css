@@ -230,6 +230,19 @@ nav a:active{
     padding-bottom: 40px;
 }
 
+ul.basic {
+    list-style-type: none;
+    margin-top: 26px;
+    padding: 0;
+    letter-spacing: 4px;
+    padding-bottom: 40px;
+    line-height: 30px;
+}
+
+ul.basic li{
+    font-weight: 400;
+}
+
 /* Tag Cloud */
 ul.tag_cloud {
     list-style-type: none;
