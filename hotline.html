@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
-    <title>Dan Bradham - Articles by Dan Bradham</title>
+    <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+    <title>Dan Bradham</title>
     <meta charset="utf-8" />
 </head>
 
 <body class="Frame">
     <header class="RowLight">
 <nav>
-    <a id="home" href="../index.html"}>Dan Bradham</a>
+    <a id="home" href="./index.html"}>Dan Bradham</a>
     <ul>
-        <li><a href="../pages/aboutme.html">About Me</a></li>
-        <li><a href="../pages/projects.html">Projects</a></li>
+        <li><a href="./pages/aboutme.html">About Me</a></li>
+        <li><a href="./pages/projects.html">Projects</a></li>
     </ul>
 </nav>
     </header>
     <div class="RowExpand">
         <div id="content">
-            <h1 class="nomargin"><a href="../hotline.html">HotLine</a></h1>
-            <time datetime="2013-11-30T15:00:00">Sat 30 November 2013</time>
-            <p>I love popups! When used properly they can really empower a user and increase their productivity.  Maya and Sketchbook have marking menus (various keys + right click) and Nuke has its node creator (tab key).  I always miss these features in other applications, especially the node creator.  For those of you who haven't used Nuke, the node creator is a single input field that pops up at your mouse cursor.  It has drop-down completion for every node in Nuke, making it really easy to search for and create nodes.  A natural side-effect of placing node creation in a simple popup is reduction of UI clutter.  Luckily with Maya's node editor Autodesk introduced a node creator just like Nuke's, but, it hasn't been taken far enough.  It's constrained to the new node editor when it could be equally as useful everywhere.</p>
+<h1 class="nomargin">HotLine</h1>
+<time datetime="2013-11-30T15:00:00">Sat 30 November 2013</time>
+<p>I love popups! When used properly they can really empower a user and increase their productivity.  Maya and Sketchbook have marking menus (various keys + right click) and Nuke has its node creator (tab key).  I always miss these features in other applications, especially the node creator.  For those of you who haven't used Nuke, the node creator is a single input field that pops up at your mouse cursor.  It has drop-down completion for every node in Nuke, making it really easy to search for and create nodes.  A natural side-effect of placing node creation in a simple popup is reduction of UI clutter.  Luckily with Maya's node editor Autodesk introduced a node creator just like Nuke's, but, it hasn't been taken far enough.  It's constrained to the new node editor when it could be equally as useful everywhere.</p>
 <h2>HotLine to the rescue!</h2>
-<p><img alt="hotline-header" src="../images/hotline-header.png" />
+<p><img alt="hotline-header" src="./images/hotline-header.png" />
 HotLine is like a supped up node creator with plenty o' added functionality.  There are currently five different modes in HotLine.</p>
 <table>
 <thead>
@@ -62,32 +62,32 @@ HotLine is like a supped up node creator with plenty o' added functionality.  Th
 </table>
 <p>Drop-down completion is enabled by default, though, I'm considering adding a configuration file to allow users to enable/disable completion for each mode.  When HotLine is up you can use the <strong>Tab</strong> key to flip through modes and the <strong>Up and Down</strong> keys to flip through history.</p>
 <h2>Creating Nodes</h2>
-<p><img alt="hotline-node" src="../images/hotline-node.png" /><br />
+<p><img alt="hotline-node" src="./images/hotline-node.png" /><br />
 Node creation mode is almost exactly like Nuke's node creator.  Simply input the node you'd like to create and press return.  There is one added feature for convenience, if you input a second string, this will be the name of the newly created node.</p>
 <h2>Renaming</h2>
 <p>The rename mode requires a bit of instruction.  I created a simple token language to give users all the renaming functionality of scripts like Comet's renamer without multiple input fields.  Let's go through the various tokens available in rename mode.</p>
 <p><strong>selected nodes:</strong> joint1, joint2, joint3</p>
-<p><img alt="hotline-pound" src="../images/hotline-pound.png" />  </p>
+<p><img alt="hotline-pound" src="./images/hotline-pound.png" />  </p>
 <blockquote>
 <p><strong>results:</strong> arm_01_BIND, arm_02_BIND, arm_03_BIND<br />
 A single string renames the selected nodes.  "#" symbols are replaced with a sequence of numbers.  Using multiple "#" increases the padding of the digit.  </p>
 </blockquote>
-<p><img alt="hotline-prefix" src="../images/hotline-prefix.png" />  </p>
+<p><img alt="hotline-prefix" src="./images/hotline-prefix.png" />  </p>
 <blockquote>
 <p><strong>results:</strong> L_arm_01_BIND, L_arm_02_BIND, L_arm_03_BIND<br />
 "+" adds a prefix if it comes after the input string.  </p>
 </blockquote>
-<p><img alt="hotline-suffix" src="../images/hotline-suffix.png" />  </p>
+<p><img alt="hotline-suffix" src="./images/hotline-suffix.png" />  </p>
 <blockquote>
 <p><strong>results:</strong> L_arm_01_BIND_JNT, L_arm_02_BIND_JNT, L_arm_03_BIND_JNT<br />
 "+" adds a suffix if it comes before the input string.  </p>
 </blockquote>
-<p><img alt="hotline-remove" src="../images/hotline-remove.png" />  </p>
+<p><img alt="hotline-remove" src="./images/hotline-remove.png" />  </p>
 <blockquote>
 <p><strong>results:</strong> L_arm_01_JNT, L_arm_02_JNT, L_arm_03_JNT<br />
 Removes the string following "-" from each of the selected nodes.  </p>
 </blockquote>
-<p><img alt="hotline-replace" src="../images/hotline-replace.png" />  </p>
+<p><img alt="hotline-replace" src="./images/hotline-replace.png" />  </p>
 <blockquote>
 <p><strong>results:</strong> R_arm_01_JNT, R_arm_02_JNT, R_arm_03_JNT<br />
 If two strings are input, the first string is replaced by the second.  </p>
@@ -109,26 +109,38 @@ If two strings are input, the first string is replaced by the second.  </p>
         </div>
     </div>
     <div class="RowMedium">
+<div class="padded">
+    <div id="disqus_thread">
+        <script type="text/javascript">
+           var disqus_identifier = "hotline.html";
+           (function() {
+           var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+           dsq.src = 'http://icantstop.disqus.com.disqus.com/embed.js';
+           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+    </div>
+</div>
     </div>
     <div class="RowDark">
         <div id="footer">
 <div class="footer_col_2">
     <h2>Articles</h2>
     <ul class="footer_ul">
-            <li><h4 class="nomargin"><a href="../hotline.html">HotLine</a></h4></br><h5 class="subt">The popup script editor!</h5></li>
-            <li><h4 class="nomargin"><a href="../obligatory.html">First Post</a></h4></br><h5 class="subt">Another blog, another first post.</h5></li>
+            <li><h4 class="nomargin"><a href="./hotline.html">HotLine</a></h4></br><h5 class="subt">The popup script editor!</h5></li>
+            <li><h4 class="nomargin"><a href="./obligatory.html">First Post</a></h4></br><h5 class="subt">Another blog, another first post.</h5></li>
     </ul>
 </div>
 <div class="footer_col">
-    <h2><a href="../tags.html">Tags</a></h2>
+    <h2><a href="./tags.html">Tags</a></h2>
     <ul class="tag_cloud">
-            <li class="tag-4"><a href="../tag/maya.html">Maya</a><span>, </span></li>
-            <li class="tag-4"><a href="../tag/first-post.html">First Post</a><span>, </span></li>
-            <li class="tag-4"><a href="../tag/python.html">Python</a><span>, </span></li>
-            <li class="tag-4"><a href="../tag/hello.html">Hello</a><span>, </span></li>
-            <li class="tag-4"><a href="../tag/hotline.html">HotLine</a><span>, </span></li>
-            <li class="tag-4"><a href="../tag/qt.html">Qt</a><span>, </span></li>
-            <li class="tag-4"><a href="../tag/hotkeys.html">Hotkeys</a></li>
+            <li class="tag-4"><a href="./tag/maya.html">Maya</a><span>, </span></li>
+            <li class="tag-4"><a href="./tag/first-post.html">First Post</a><span>, </span></li>
+            <li class="tag-4"><a href="./tag/python.html">Python</a><span>, </span></li>
+            <li class="tag-4"><a href="./tag/hello.html">Hello</a><span>, </span></li>
+            <li class="tag-4"><a href="./tag/hotline.html">HotLine</a><span>, </span></li>
+            <li class="tag-4"><a href="./tag/qt.html">Qt</a><span>, </span></li>
+            <li class="tag-4"><a href="./tag/hotkeys.html">Hotkeys</a></li>
     </ul>
     <h2>Links</h2>
     <ul class="basic">

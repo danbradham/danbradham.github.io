@@ -1,4 +1,4 @@
-@import url(pygments.css);
+@import url(pygment.css);
 @import url(http://fonts.googleapis.com/css?family=Vollkorn:400,700);
 
 .Frame {
@@ -282,4 +282,48 @@ ul.tag_cloud li.tag-3 {
 
 .padded {
     padding: 20px;
+}
+
+table {
+  padding: 0; }
+
+table tr {
+background-color: white;
+margin: 0;
+padding: 0; }
+
+table tr:nth-child(2n) {
+  background-color: white; }
+
+table tr th {
+  font-weight: bold;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px; }
+
+table tr td {
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px; }
+
+table tr th :first-child, table tr td :first-child {
+  margin-top: 0;}
+
+table tr th :last-child, table tr td :last-child {
+  margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+
+blockquote > :first-child {
+margin-top: 0; }
+
+blockquote > :last-child {
+margin-bottom: 0; }
+
+.codehilite {
+    background: white;
+    padding: 2px;
 }

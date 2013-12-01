@@ -18,10 +18,94 @@
     </header>
     <div class="RowExpand">
         <div id="content">
-            <h1 class="nomargin"><a href="./obligatory.html">First Post</a></h1>
-            <time datetime="2013-11-22T09:04:00">Fri 22 November 2013</time>
-            <p>So I began cleaning up my github repos and realized that I wanted a more permanent solution for blogging. Python and Pelican provided me with a great solution: write my posts in markdown and generate static html pages. It may not be the most elegant solution, but, it sure feels great to be liberated from blogger!! </p>
-<p>I'm looking forward to writing about my Python projects and Python in a grander sense, Autodesk's ever-surprising Maya, and post some of my artwork here and there.</p>
+            <h1 class="nomargin"><a href="./hotline.html">HotLine</a></h1>
+            <time datetime="2013-11-30T15:00:00">Sat 30 November 2013</time>
+            <p>I love popups! When used properly they can really empower a user and increase their productivity.  Maya and Sketchbook have marking menus (various keys + right click) and Nuke has its node creator (tab key).  I always miss these features in other applications, especially the node creator.  For those of you who haven't used Nuke, the node creator is a single input field that pops up at your mouse cursor.  It has drop-down completion for every node in Nuke, making it really easy to search for and create nodes.  A natural side-effect of placing node creation in a simple popup is reduction of UI clutter.  Luckily with Maya's node editor Autodesk introduced a node creator just like Nuke's, but, it hasn't been taken far enough.  It's constrained to the new node editor when it could be equally as useful everywhere.</p>
+<h2>HotLine to the rescue!</h2>
+<p><img alt="hotline-header" src="./images/hotline-header.png" />
+HotLine is like a supped up node creator with plenty o' added functionality.  There are currently five different modes in HotLine.</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Usage</th>
+<th>Auto-Completes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PY</strong>thon</td>
+<td>execute python script</td>
+<td>maya.cmds module</td>
+</tr>
+<tr>
+<td><strong>MEL</strong></td>
+<td>execute mel script</td>
+<td>mel commands</td>
+</tr>
+<tr>
+<td><strong>SEL</strong>ect</td>
+<td>select scene nodes using standard Maya selection wildcards</td>
+<td>scene nodes</td>
+</tr>
+<tr>
+<td><strong>REN</strong>ame</td>
+<td>rename selected nodes using a mini token language</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>NODE</strong></td>
+<td>create scene nodes</td>
+<td>Maya scene nodes</td>
+</tr>
+</tbody>
+</table>
+<p>Drop-down completion is enabled by default, though, I'm considering adding a configuration file to allow users to enable/disable completion for each mode.  When HotLine is up you can use the <strong>Tab</strong> key to flip through modes and the <strong>Up and Down</strong> keys to flip through history.</p>
+<h2>Creating Nodes</h2>
+<p><img alt="hotline-node" src="./images/hotline-node.png" /><br />
+Node creation mode is almost exactly like Nuke's node creator.  Simply input the node you'd like to create and press return.  There is one added feature for convenience, if you input a second string, this will be the name of the newly created node.</p>
+<h2>Renaming</h2>
+<p>The rename mode requires a bit of instruction.  I created a simple token language to give users all the renaming functionality of scripts like Comet's renamer without multiple input fields.  Let's go through the various tokens available in rename mode.</p>
+<p><strong>selected nodes:</strong> joint1, joint2, joint3</p>
+<p><img alt="hotline-pound" src="./images/hotline-pound.png" />  </p>
+<blockquote>
+<p><strong>results:</strong> arm_01_BIND, arm_02_BIND, arm_03_BIND<br />
+A single string renames the selected nodes.  "#" symbols are replaced with a sequence of numbers.  Using multiple "#" increases the padding of the digit.  </p>
+</blockquote>
+<p><img alt="hotline-prefix" src="./images/hotline-prefix.png" />  </p>
+<blockquote>
+<p><strong>results:</strong> L_arm_01_BIND, L_arm_02_BIND, L_arm_03_BIND<br />
+"+" adds a prefix if it comes after the input string.  </p>
+</blockquote>
+<p><img alt="hotline-suffix" src="./images/hotline-suffix.png" />  </p>
+<blockquote>
+<p><strong>results:</strong> L_arm_01_BIND_JNT, L_arm_02_BIND_JNT, L_arm_03_BIND_JNT<br />
+"+" adds a suffix if it comes before the input string.  </p>
+</blockquote>
+<p><img alt="hotline-remove" src="./images/hotline-remove.png" />  </p>
+<blockquote>
+<p><strong>results:</strong> L_arm_01_JNT, L_arm_02_JNT, L_arm_03_JNT<br />
+Removes the string following "-" from each of the selected nodes.  </p>
+</blockquote>
+<p><img alt="hotline-replace" src="./images/hotline-replace.png" />  </p>
+<blockquote>
+<p><strong>results:</strong> R_arm_01_JNT, R_arm_02_JNT, R_arm_03_JNT<br />
+If two strings are input, the first string is replaced by the second.  </p>
+</blockquote>
+<h2>Installing HotLine</h2>
+<p>PyQt4 is required to use HotLine.  Unfortunately, Autodesk compiled Python with Visual Studio 2010. Which is fantastic because it means that you can't use one of the official binaries for PyQt4.  <a href="http://nathanhorne.com/">Nathan Horne</a> has links to windows binaries for PyQt4 compiled against Maya 2013 and Maya 2012, these will work just fine.</p>
+<p>After you've installed PyQt4 installation of HotLine is simple. Just take hotline.py and place it in your Maya scripts directory. Set any key to run the following Python script, I use <strong>h</strong>:</p>
+<div class="codehilite"><pre><span class="kn">import</span> <span class="nn">maya.cmds</span> <span class="kn">as</span> <span class="nn">cmds</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">hl</span><span class="o">.</span><span class="n">enter</span><span class="p">()</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">hotline</span> <span class="kn">import</span> <span class="n">HotLine</span>
+    <span class="n">hl</span> <span class="o">=</span> <span class="n">HotLine</span><span class="p">()</span>
+    <span class="n">hl</span><span class="o">.</span><span class="n">enter</span><span class="p">()</span>
+</pre></div>
+
+
+<h2><a href="https://github.com/danbradham/HotLine">Download Hotline from github!</a></h2>
         </div>
     </div>
     <div class="RowMedium">
@@ -31,14 +115,20 @@
 <div class="footer_col_2">
     <h2>Articles</h2>
     <ul class="footer_ul">
+            <li><h4 class="nomargin"><a href="./hotline.html">HotLine</a></h4></br><h5 class="subt">The popup script editor!</h5></li>
             <li><h4 class="nomargin"><a href="./obligatory.html">First Post</a></h4></br><h5 class="subt">Another blog, another first post.</h5></li>
     </ul>
 </div>
 <div class="footer_col">
     <h2><a href="./tags.html">Tags</a></h2>
     <ul class="tag_cloud">
+            <li class="tag-4"><a href="./tag/maya.html">Maya</a><span>, </span></li>
+            <li class="tag-4"><a href="./tag/first-post.html">First Post</a><span>, </span></li>
+            <li class="tag-4"><a href="./tag/python.html">Python</a><span>, </span></li>
             <li class="tag-4"><a href="./tag/hello.html">Hello</a><span>, </span></li>
-            <li class="tag-4"><a href="./tag/first-post.html">First Post</a></li>
+            <li class="tag-4"><a href="./tag/hotline.html">HotLine</a><span>, </span></li>
+            <li class="tag-4"><a href="./tag/qt.html">Qt</a><span>, </span></li>
+            <li class="tag-4"><a href="./tag/hotkeys.html">Hotkeys</a></li>
     </ul>
     <h2>Links</h2>
     <ul class="basic">
